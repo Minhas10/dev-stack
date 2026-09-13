@@ -3,7 +3,7 @@ import Logo from '../assets/logo-text.png'
 import '../App.css'
 const Nav = () => {
     return (
-        <nav className="p-5">
+        <nav className="sticky top-0 z-50  bg-white pt-5 pb-3">
             <div className="container mx-auto flex  justify-between">
                 <img src={Logo} alt='Logo' />
                 <div>
