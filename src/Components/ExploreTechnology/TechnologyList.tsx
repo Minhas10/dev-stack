@@ -4,25 +4,27 @@ import type { technology } from '../../types/technologyType';
 import TechnologyCard from './TechnologyCard';
 interface technologyListProps{
     technologyPromise: Promise<technology[]>;
-    stack?: technology[];
-    onAdd?:(technology:technology)=> void;
+    stack: technology[];
+    onAdd:(technology:technology)=> void;
 }
-const TechnologyList = ({ technologyPromise }:technologyListProps) => {
+const TechnologyList = ({ technologyPromise,stack,onAdd }:technologyListProps) => {
     const technologies = use(technologyPromise);
 
     return (
-        <div className='container m-auto grid grid-cols-3  gap-2 '>
+        <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-cols-3  gap-4 '>
             {technologies.map((technology:technology) => {
-                // const isAdded= stack.some((item)=>item.id===technology.id);
+                const isAdded= stack.some((item)=>item.id===technology.id);
                 return (
                     
                         <TechnologyCard 
                         key={technology.id}
                         technology={technology}
+                        isAdded={isAdded}
+                        onAdd={onAdd}
                          />
                     
                 );
-                // console.log(tech.name);
+                ;
             })}     
             
         </div>
@@ -30,45 +32,3 @@ const TechnologyList = ({ technologyPromise }:technologyListProps) => {
 };
 
 export default TechnologyList;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import type { technology } from "../../types/technologyType";
-// import { use } from "react";
-// import TechnologyCard from "./TechnologyCard";
-
-// interface TechnologiesProps {
-//     technologyPromise: Promise<technology[]>;
-// }
-// const Technologies = ({ technologyPromise }: TechnologiesProps) => {
-//     const technologies = use(technologyPromise);
-//     console.log(technologies);
-//     {technologies.map((tech) => {
-//         console.log(tech.name);
-//     })} 
-//     return (
-//         <div>
-//             <TechnologyCard technology={technologies} />
-//         </div>
-//     );
-// };
-
-// export default Technologies;

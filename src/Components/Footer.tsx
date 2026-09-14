@@ -2,7 +2,7 @@
 import Logo from "../assets/logo-text.png";
 const Footer = () => {
     return (<div>   
-        <div className="flex container mx-auto  justify-center bg-white border-t border-gray-300 gap-25 p-10 bg-gray-100">
+        <div className="flex container mx-auto  justify-center bg-white border-t border-gray-300 gap-25 p-10 ">
             <div>
                 <img src={Logo} alt="logo" />
                 <p className="text-gray-600 pt-1">Curated tools, technologies, and resources for developers building</p>

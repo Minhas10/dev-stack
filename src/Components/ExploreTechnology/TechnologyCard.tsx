@@ -6,16 +6,17 @@ import type { technology } from '../../types/technologyType';
 
 type TechnologyCardProps = {
     technology: technology;
-    isAdded?:boolean;
+    isAdded:boolean;
+    onAdd:(technology:technology)=>void;
 };
 
-const TechnologyCard = ({ technology,isAdded=false }: TechnologyCardProps) => {
+const TechnologyCard = ({ technology,isAdded,onAdd }: TechnologyCardProps) => {
     // console.log(technology, "Technology Card");
     
     
     
     return (
-        <div className=''>
+        
             <div className='technology-card'>
             <div className='flex justify-between '>
                 <img src={technology.icon} alt={technology.name} className='card-icon'/>
@@ -30,14 +31,14 @@ const TechnologyCard = ({ technology,isAdded=false }: TechnologyCardProps) => {
                 <span className=''>{technology.difficulty}</span>
                 <span>⭐{technology.rating}</span>
             </div>
-            <button disabled={isAdded}>{isAdded? "✓ Added to Stack":"Add to Stack"}</button>
+            <button onClick={()=> onAdd(technology)} 
+            disabled={isAdded}>{isAdded? "✓ Added to Stack":"Add to Stack"}
+            </button>
 
                 
             </div>
-            <div>
-                
-            </div>
-        </div>
+            
+        
     );
 };
 
