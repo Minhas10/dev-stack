@@ -1,11 +1,12 @@
-export interface technology{
-    icon:string,
-    id:string,
-    name:string,
-    category:string,
-    description:string,
-    
-    rating:number,
-    difficulty:string,
-    basedOn:string,
-   }
+export interface technology {
+
+    id: string,
+    name: string,
+    category: string,
+    description: string,
+    icon: string,
+    rating: number,
+    difficulty: string,
+    badge: string
+
+}

@@ -5,3 +5,12 @@
   color: #e11414;
   
 }
+.card-icon{
+  width: 40px;
+  height: 40px;
+}
+.technologyCard{
+  border-radius: 10px;
+  border: 2px;
+  border-color: black;
+}

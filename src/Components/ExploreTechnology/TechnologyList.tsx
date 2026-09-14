@@ -2,14 +2,29 @@ import { use } from 'react';
 
 import type { technology } from '../../types/technologyType';
 import TechnologyCard from './TechnologyCard';
-
-const TechnologyList = ({ technologyPromise }: { technologyPromise: Promise<technology[]> }) => {
+interface technologyListProps{
+    technologyPromise: Promise<technology[]>;
+    stack?: technology[];
+    onAdd?:(technology:technology)=> void;
+}
+const TechnologyList = ({ technologyPromise }:technologyListProps) => {
     const technologies = use(technologyPromise);
 
     return (
-        <div>
-            {technologies.map(tech => <TechnologyCard 
-            key={tech.name} technology={[tech]} />)}
+        <div className='container m-auto grid grid-cols-3  gap-2 '>
+            {technologies.map((technology:technology) => {
+                // const isAdded= stack.some((item)=>item.id===technology.id);
+                return (
+                    
+                        <TechnologyCard 
+                        key={technology.id}
+                        technology={technology}
+                         />
+                    
+                );
+                // console.log(tech.name);
+            })}     
+            
         </div>
     );
 };
