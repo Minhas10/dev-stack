@@ -35,7 +35,7 @@ const AddedStack = ({
       {/* Empty State */}
       {stack.length === 0 ? (
         <p className="py-8 text-center text-gray-500">
-          No technologies added yet.
+          Your stack is empty.
         </p>
       ) : (
         <>
@@ -53,7 +53,7 @@ const AddedStack = ({
           {/* Remove All */}
           <button
             onClick={onRemoveAll}
-            className="mt-4 w-full rounded bg-red-500 px-4 py-2 text-white"
+            className="mt-4 w-full rounded text-[25px] bg-white-500 px-4 py-2 text-red-700"
           >
             Remove All
           </button>
